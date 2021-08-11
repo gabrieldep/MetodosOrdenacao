@@ -8,10 +8,13 @@ class Informacoes
 		~Informacoes();
 		void SetPrimeiraString(std::string);
 		void SetSegundaString(std::string);
-		std::string GetPrimeiraString(std::string);
-		std::string GetSegundaString(std::string);
+		std::string GetPrimeiraString();
+		std::string GetSegundaString();
 	private:
+		Informacoes* prox;
 		std::string PrimeiraString;
 		std::string SegundaString;
+
+	friend class Fila;
 };
 

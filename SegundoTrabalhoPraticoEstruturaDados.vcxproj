@@ -142,14 +142,10 @@
     <ClCompile Include="Fila.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Informacoes.cpp" />
-    <ClCompile Include="TipoCelula.cpp" />
-    <ClCompile Include="TipoItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fila.h" />
     <ClInclude Include="Informacoes.h" />
-    <ClInclude Include="TipoCelula.h" />
-    <ClInclude Include="TipoItem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

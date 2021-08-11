@@ -7,7 +7,7 @@
 Fila::Fila()
 {
 	tamanho = 0;
-	frente = new TipoCelula;
+	frente = new Informacoes;
 	tras = frente;
 }
 
@@ -42,12 +42,13 @@ bool Fila::Vazia()
 /// Adiciona uma célula ao final da fila.
 /// </summary>
 /// <param name="tipoCelula">Celula a ser adicionada.</param>
-void Fila::Enfileira(TipoCelula tipoCelula)
+void Fila::Enfileira(Informacoes tipoCelula)
 {
-	TipoCelula* nova;
+	Informacoes* nova;
 
-	nova = new TipoCelula();
-	nova->SetChave(tipoCelula.GetChave());
+	nova = new Informacoes();
+	nova->SetPrimeiraString(tipoCelula.GetPrimeiraString());
+	nova->SetSegundaString(tipoCelula.GetSegundaString());
 	tras->prox = nova;
 	tras = nova;
 	tamanho++;
@@ -57,10 +58,10 @@ void Fila::Enfileira(TipoCelula tipoCelula)
 /// Remove o primeiro item da fila.
 /// </summary>
 /// <returns>TipoCelula removido do inicio da fila.</returns>
-TipoCelula Fila::Desenfilera()
+Informacoes Fila::Desenfilera()
 {
-	TipoCelula* p;
-	TipoCelula aux;
+	Informacoes* p;
+	Informacoes aux;
 
 	if (tamanho == 0) {
 		throw "Fila vazia";
@@ -79,7 +80,7 @@ TipoCelula Fila::Desenfilera()
 /// </summary>
 void Fila::Limpa()
 {
-	TipoCelula* p;
+	Informacoes* p;
 
 	p = frente->prox;
 	while (p != NULL) {

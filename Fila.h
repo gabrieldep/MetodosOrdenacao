@@ -1,18 +1,18 @@
 #pragma once
-#include "TipoCelula.h"
+#include "Informacoes.h"
 class Fila
 {
 private:
 	int tamanho;
-	TipoCelula* frente;
-	TipoCelula* tras;
+	Informacoes* frente;
+	Informacoes* tras;
 public:
 	Fila();
 	~Fila();
 	int GetTamanho();
 	bool Vazia();
-	void Enfileira(TipoCelula tipoCelula);
-	TipoCelula Desenfilera();
+	void Enfileira(Informacoes tipoCelula);
+	Informacoes Desenfilera();
 	void Limpa();
 };
 

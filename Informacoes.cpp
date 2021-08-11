@@ -27,12 +27,12 @@ void Informacoes::SetSegundaString(std::string segundaString)
 	this->SegundaString = segundaString;
 }
 
-std::string Informacoes::GetPrimeiraString(std::string)
+std::string Informacoes::GetPrimeiraString()
 {
 	return this->PrimeiraString;
 }
 
-std::string Informacoes::GetSegundaString(std::string)
+std::string Informacoes::GetSegundaString()
 {
 	return this->SegundaString;
 }
