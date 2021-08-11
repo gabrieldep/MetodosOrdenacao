@@ -14,7 +14,6 @@ Informacoes::Informacoes(std::string primeira, std::string segunda)
 
 Informacoes::~Informacoes()
 {
-	delete this;
 }
 
 void Informacoes::SetPrimeiraString(std::string primeiraString)
