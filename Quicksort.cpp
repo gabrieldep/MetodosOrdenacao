@@ -28,8 +28,6 @@ void Quicksort::Ordena(int esq, int dir, Informacoes informacoes[])
 	}
 }
 
-
-
 void Quicksort::Particiona(int inicio, int fim, int* i, int* j, Informacoes informacoes[])
 {
 	Informacoes pivo, w;

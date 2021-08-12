@@ -32,11 +32,11 @@ int main(int argc, char* argv[])
 	fclose(arquivo);
 
 
-	Quicksort(true).OrdenaQuicksort(informacoes, entrada);
+	Quicksort(false).OrdenaQuicksort(informacoes, entrada);
 
 
 	for (int i = 0; i < entrada; i++) {
-		cout << informacoes[i].GetPrimeiraString() << endl;
+		cout << informacoes[i].GetSegundaString() << endl;
 	}
 	return 0;
 }
