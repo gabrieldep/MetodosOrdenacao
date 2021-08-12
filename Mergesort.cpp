@@ -10,43 +10,49 @@ Mergesort::~Mergesort()
 {
 }
 
-Informacoes* Mergesort::Ordena(int esq, int dir, Informacoes informacoes[])
+void Mergesort::Ordena(int esq, int dir, Informacoes informacoes[])
 {
-	int meio;
-
+	int meio = 0;
 	if (esq < dir) {
 		meio = (esq + dir) / 2;
-		informacoes = Merge(esq, dir, Ordena(esq, meio, informacoes), Ordena(meio + 1, dir, informacoes));
+        Ordena(esq, meio, informacoes);
+        Ordena(meio + 1, dir, informacoes);
+        Merge(esq, meio, dir, informacoes);
 	}
-	return informacoes;
 }
 
-Informacoes* Mergesort::Merge(int tamanhoEsq, int tamanhoDir, Informacoes informacoesEsq[], Informacoes informacoesDir[])
+void Mergesort::Merge(int comeco, int meio, int fim, Informacoes informacoes[])
 {
-	Informacoes* result = new Informacoes[tamanhoDir + tamanhoEsq]();
-	int i = 0, j = 0, k = 0;
+    int esquerda = comeco, direita = meio + 1, k = 0, tam = fim - comeco + 1;
+    Informacoes* auxiliar = new Informacoes[tam]();;
 
-	while (i < tamanhoEsq && j < tamanhoDir) {
-		if (OrdenacaoControl().VemAntes(informacoesEsq[i].GetString(this->Primeira), informacoesDir[j].GetString(this->Primeira))) {
-			result[k] = informacoesEsq[i];
-			i++;
-		}
-		else {
-			result[k] = informacoesDir[j];
-			j++;
-		}
-		k++;
-	}
+    while (esquerda <= meio && direita <= fim) {
+        if (OrdenacaoControl().VemAntes(informacoes[esquerda].GetString(Primeira), informacoes[direita].GetString(Primeira))) {
+            auxiliar[k] = informacoes[esquerda];
+            esquerda++;
+        }
+        else {
+            auxiliar[k] = informacoes[direita];
+            direita++;
+        }
+        k++;
+    }
 
-	if (k < tamanhoEsq + tamanhoDir) {
-		for (; i < tamanhoEsq; i++) {
-			result[k] = informacoesEsq[i];
-			k++;
-		}
-		for (; j < tamanhoDir; j++) {
-			result[k] = informacoesDir[j];
-			k++;
-		}
-	}
-	return result;
+    while (esquerda <= meio) {
+        auxiliar[k] = informacoes[esquerda];
+        k++;
+        esquerda++;
+    }
+
+    while (direita <= fim) {
+        auxiliar[k] = informacoes[direita];
+        k++;
+        direita++;
+    }
+
+    for (k = comeco; k <= fim; k++) {
+        informacoes[k] = auxiliar[k - comeco];
+    }
+
+    delete[] auxiliar;
 }
