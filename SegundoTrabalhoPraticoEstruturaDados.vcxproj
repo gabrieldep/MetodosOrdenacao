@@ -139,14 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Fila.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Informacoes.cpp" />
     <ClCompile Include="OrdenacaoControl.cpp" />
     <ClCompile Include="Quicksort.h.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Fila.h" />
     <ClInclude Include="Informacoes.h" />
     <ClInclude Include="OrdenacaoControl.h" />
     <ClInclude Include="Quicksort.h" />

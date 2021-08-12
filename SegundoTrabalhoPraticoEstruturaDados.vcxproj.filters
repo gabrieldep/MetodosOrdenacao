@@ -21,9 +21,6 @@
     <ClCompile Include="Informacoes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Fila.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Quicksort.h.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,9 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Informacoes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Fila.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Quicksort.h">
