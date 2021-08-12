@@ -1,4 +1,13 @@
 #include "OrdenacaoControl.h"
+#include <iostream>
+
+OrdenacaoControl::OrdenacaoControl()
+{
+}
+
+OrdenacaoControl::~OrdenacaoControl()
+{
+}
 
 bool OrdenacaoControl::VemAntes(std::string primeira, std::string segunda)
 {
@@ -11,8 +20,4 @@ bool OrdenacaoControl::VemAntes(std::string primeira, std::string segunda)
 		}
 	}
 	return primeira.size() < segunda.size();
-}
-
-void OrdenacaoControl::Particiona(int inicio, int fim, std::string* i, std::string* j, Informacoes informacoes[])
-{
 }

@@ -142,7 +142,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Informacoes.cpp" />
     <ClCompile Include="OrdenacaoControl.cpp" />
-    <ClCompile Include="Quicksort.h.cpp" />
+    <ClCompile Include="Quicksort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Informacoes.h" />

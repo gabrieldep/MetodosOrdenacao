@@ -4,7 +4,8 @@
 class OrdenacaoControl
 {
 	public:
+		OrdenacaoControl();
+		~OrdenacaoControl();
 		bool VemAntes(std::string primeira, std::string segunda);
-		void Particiona(int inicio, int fim, std::string* i, std::string* j, Informacoes informacoes[]);
 };
 

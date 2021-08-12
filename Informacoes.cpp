@@ -35,3 +35,8 @@ std::string Informacoes::GetSegundaString()
 {
 	return this->SegundaString;
 }
+
+std::string Informacoes::GetString(bool primeira)
+{
+	return primeira ? PrimeiraString : SegundaString;
+}

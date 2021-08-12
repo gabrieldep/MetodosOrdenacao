@@ -10,6 +10,7 @@ class Informacoes
 		void SetSegundaString(std::string);
 		std::string GetPrimeiraString();
 		std::string GetSegundaString();
+		std::string GetString(bool primeira);
 	private:
 		Informacoes* prox;
 		std::string PrimeiraString;

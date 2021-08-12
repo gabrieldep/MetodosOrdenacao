@@ -1,11 +1,11 @@
 #include <iostream>
 #include "Informacoes.h"
+#include "Quicksort.h"
 using namespace std;
 int main(int argc, char* argv[])
 {
 	int entrada = 200000;
 	Informacoes* informacoes = new Informacoes[entrada]();
-	Informacoes* info;
 	char Linha[100];
 	char* result;
 	FILE* arquivo = fopen("C:/Users/Gabriel/Documents/homologacao.txt", "rt");
@@ -29,8 +29,14 @@ int main(int argc, char* argv[])
 		informacoes[aux].SetSegundaString(dados);
 		aux++;
 	}
-
 	fclose(arquivo);
 
+
+	Quicksort(true).OrdenaQuicksort(informacoes, entrada);
+
+
+	for (int i = 0; i < entrada; i++) {
+		cout << informacoes[i].GetPrimeiraString() << endl;
+	}
 	return 0;
 }

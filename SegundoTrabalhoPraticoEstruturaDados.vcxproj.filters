@@ -21,7 +21,7 @@
     <ClCompile Include="Informacoes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Quicksort.h.cpp">
+    <ClCompile Include="Quicksort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="OrdenacaoControl.cpp">
