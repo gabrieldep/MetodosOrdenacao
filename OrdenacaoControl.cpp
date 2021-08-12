@@ -12,3 +12,7 @@ bool OrdenacaoControl::VemAntes(std::string primeira, std::string segunda)
 	}
 	return primeira.size() < segunda.size();
 }
+
+void OrdenacaoControl::Particiona(int inicio, int fim, std::string* i, std::string* j, Informacoes informacoes[])
+{
+}
