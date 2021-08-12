@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 
 	PreencheVetor(&informacoes, &argv[1]);
 
-	Mergesort(true).Ordena(informacoes, 0, entrada - 1);
+	Mergesort(true).Ordena(0, entrada - 1, informacoes);
 
 	for (int i = 0; i < entrada; i++) {
 		cout << informacoes[i].GetPrimeiraString() << endl;

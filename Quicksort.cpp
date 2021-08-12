@@ -32,14 +32,21 @@ void Quicksort::Particiona(int inicio, int fim, int* i, int* j, Informacoes info
 {
 	Informacoes pivo, w;
 	*i = inicio; *j = fim;
-
 	pivo = informacoes[(*i + *j) / 2];
 
 	do {
-		while (OrdenacaoControl().VemAntes(informacoes[*i].GetString(this->primeira), pivo.GetString(this->primeira))) (*i)++;
-		while (OrdenacaoControl().VemAntes(pivo.GetString(this->primeira), informacoes[*j].GetString(this->primeira))) (*j)--;
+		while (OrdenacaoControl().VemAntes(informacoes[*i].GetString(this->primeira), pivo.GetString(this->primeira))) {
+			(*i)++;
+		}
+
+		while (OrdenacaoControl().VemAntes(pivo.GetString(this->primeira), informacoes[*j].GetString(this->primeira))) {
+			(*j)--;
+		}
+
 		if (*i <= *j) {
-			w = informacoes[*i]; informacoes[*i] = informacoes[*j]; informacoes[*j] = w;
+			w = informacoes[*i];
+			informacoes[*i] = informacoes[*j];
+			informacoes[*j] = w;
 			(*i)++;
 			(*j)--;
 		}
