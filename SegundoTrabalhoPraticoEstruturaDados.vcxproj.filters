@@ -24,7 +24,10 @@
     <ClCompile Include="Fila.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ordenadores.cpp">
+    <ClCompile Include="Quicksort.h.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OrdenacaoControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +38,10 @@
     <ClInclude Include="Fila.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ordenadores.h">
+    <ClInclude Include="Quicksort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OrdenacaoControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

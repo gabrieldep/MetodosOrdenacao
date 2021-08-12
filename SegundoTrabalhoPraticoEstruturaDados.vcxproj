@@ -142,12 +142,14 @@
     <ClCompile Include="Fila.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Informacoes.cpp" />
-    <ClCompile Include="Ordenadores.cpp" />
+    <ClCompile Include="OrdenacaoControl.cpp" />
+    <ClCompile Include="Quicksort.h.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fila.h" />
     <ClInclude Include="Informacoes.h" />
-    <ClInclude Include="Ordenadores.h" />
+    <ClInclude Include="OrdenacaoControl.h" />
+    <ClInclude Include="Quicksort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
