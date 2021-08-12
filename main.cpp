@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Informacoes.h"
-#include "Fila.h"
 using namespace std;
 int main(int argc, char* argv[])
 {

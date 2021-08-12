@@ -1,6 +1,7 @@
 #include "Quicksort.h"
+#include "Informacoes.h"
 
-void Quicksort::OrdenaQuicksort(std::string parameter, Fila* fila)
+void Quicksort::OrdenaQuicksort(std::string parameter, Informacoes Informacoes[])
 {
 
 }
