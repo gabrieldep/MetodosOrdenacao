@@ -1,32 +1,36 @@
 #include <iostream>
 #include "Informacoes.h"
 #include "Fila.h"
-
+using namespace std;
 int main(int argc, char* argv[])
 {
-	Fila* servidor = new Fila();
+	int entrada = 200000;
+	Informacoes* informacoes = new Informacoes[entrada]();
 	Informacoes* info;
 	char Linha[100];
 	char* result;
 	FILE* arquivo = fopen("C:/Users/Gabriel/Documents/homologacao.txt", "rt");
+	int aux = 0;
 	while (!feof(arquivo))
 	{
 		result = fgets(Linha, 100, arquivo);
 		if (result == NULL)break;
-		std::string s = result;
-		std::string primeira = "";
-		std::string segunda = "";
+		string s = result;
+		string nome;
+		string dados;
 		for (int i = 0; i < s.size(); i++) {
 			if (s[i] == ' ') {
-				primeira = s.substr(0, i);
-				segunda = s.substr(i + 1, s.size());
+				nome = s.substr(0, i);
+				dados = s.substr(i + 1, s.size());
 				break;
 			}
 		}
 
-		info = new Informacoes(primeira, segunda);
-		servidor->Enfileira(*info);
+		informacoes[aux].SetPrimeiraString(nome);
+		informacoes[aux].SetSegundaString(dados);
+		aux++;
 	}
+
 	fclose(arquivo);
 
 	return 0;
