@@ -1,13 +1,14 @@
 #include <iostream>
 #include "Informacoes.h"
 #include "Quicksort.h"
+#include "Mergesort.h"
 using namespace std;
 
 void PreencheVetor(Informacoes* informacoes[], char* caminho[]) {
 	char* result;
 	char Linha[100];
 	//*caminho = "C:/Users/Gabriel/Documents/homologacao.txt";
-	FILE* arquivo = fopen("C:/Users/Gabriel/Documents/homologacao.txt", "rt");
+	FILE* arquivo = fopen("C:/Users/Gabriel/Documents/teste1000.txt", "rt");
 	int aux = 0;
 	while (!feof(arquivo))
 	{
@@ -28,12 +29,14 @@ void PreencheVetor(Informacoes* informacoes[], char* caminho[]) {
 
 int main(int argc, char* argv[])
 {
-	int entrada = 200000;
+	int entrada = 12;
 	Informacoes* informacoes = new Informacoes[entrada]();
 
 	PreencheVetor(&informacoes, &argv[1]);
 
-	Quicksort(true).OrdenaQuicksort(informacoes, entrada);
+	//Quicksort(true).OrdenaQuicksort(informacoes, entrada);
+
+	Mergesort(true).Ordena(0, entrada, informacoes);
 
 
 	for (int i = 0; i < entrada; i++) {
