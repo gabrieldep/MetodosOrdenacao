@@ -141,11 +141,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Informacoes.cpp" />
+    <ClCompile Include="Mergesort.cpp" />
     <ClCompile Include="OrdenacaoControl.cpp" />
     <ClCompile Include="Quicksort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Informacoes.h" />
+    <ClInclude Include="Mergesort.h" />
     <ClInclude Include="OrdenacaoControl.h" />
     <ClInclude Include="Quicksort.h" />
   </ItemGroup>
