@@ -6,13 +6,12 @@
 #include "Radixsort.h"
 using namespace std;
 
-void PreencheVetor(Informacoes* informacoes[], char* caminho[]) {
+void PreencheVetor(Informacoes* informacoes[], const char caminho[], int tamanho) {
 	char* result;
 	char Linha[100];
-	//*caminho = "C:/Users/Gabriel/Documents/homologacao.txt";
-	FILE* arquivo = fopen("C:/Users/Gabriel/Documents/homologacao.txt", "rt");
+	FILE* arquivo = fopen(caminho, "rt");
 	int aux = 0;
-	while (!feof(arquivo))
+	while (!feof(arquivo) && aux < tamanho)
 	{
 		result = fgets(Linha, 100, arquivo);
 		if (result == NULL)break;
@@ -30,18 +29,33 @@ void PreencheVetor(Informacoes* informacoes[], char* caminho[]) {
 	fclose(arquivo);
 }
 
-int main(int argc, char* argv[])
+int main(int argc, const char* argv[])
 {
-	int entrada = 200000;
+	int entrada = stoi(argv[3]);
 	Informacoes* informacoes = new Informacoes[entrada]();
+	PreencheVetor(&informacoes, argv[1], entrada);
 
-	PreencheVetor(&informacoes, &argv[1]);
-
-	Radixsort().Ordena(informacoes, entrada);
+	int configuracao = stoi(argv[2]);
+	if (configuracao == 1) {
+		Heapsort().Ordena(informacoes, entrada);
+		Quicksort().Ordena(informacoes, entrada);
+	}
+	else if (configuracao == 2) {
+		Radixsort().Ordena(informacoes, entrada);
+		Quicksort().Ordena(informacoes, entrada);
+	}
+	else if (configuracao == 3) {
+		Heapsort().Ordena(informacoes, entrada);
+		Mergesort().Ordena(informacoes, entrada);
+	}
+	else if (configuracao == 4) {
+		Radixsort().Ordena(informacoes, entrada);
+		Mergesort().Ordena(informacoes, entrada);
+	}
 
 	for (int i = 0; i < entrada; i++) {
-		cout << informacoes[i].GetNome() << " ";
-		cout << informacoes[i].GetDados() << endl;
+		cout << informacoes[i].GetNome() << " " << informacoes[i].GetDados();
 	}
+
 	return 0;
 }
