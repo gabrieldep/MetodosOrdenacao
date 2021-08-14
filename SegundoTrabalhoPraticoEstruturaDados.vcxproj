@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Heapsort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Informacoes.cpp" />
     <ClCompile Include="Mergesort.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="Quicksort.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Heapsort.h" />
     <ClInclude Include="Informacoes.h" />
     <ClInclude Include="Mergesort.h" />
     <ClInclude Include="OrdenacaoControl.h" />
