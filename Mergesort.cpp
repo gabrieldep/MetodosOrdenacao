@@ -1,9 +1,8 @@
 #include "Mergesort.h"
 #include "OrdenacaoControl.h"
 
-Mergesort::Mergesort(bool primeira)
+Mergesort::Mergesort()
 {
-	this->Primeira = primeira;
 }
 
 Mergesort::~Mergesort()
@@ -27,7 +26,7 @@ void Mergesort::Merge(int comeco, int meio, int fim, Informacoes informacoes[])
     Informacoes* auxiliar = new Informacoes[tam]();;
 
     while (i <= meio && j <= fim) {
-        if (OrdenacaoControl().VemAntes(informacoes[i].GetString(Primeira), informacoes[j].GetString(Primeira))) {
+        if (OrdenacaoControl().VemAntes(informacoes[i].GetNome(), informacoes[j].GetNome())) {
             auxiliar[k] = informacoes[i];
             i++;
         }

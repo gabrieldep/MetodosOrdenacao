@@ -2,41 +2,36 @@
 
 Informacoes::Informacoes()
 {
-	this->PrimeiraString = "";
-	this->SegundaString = "";
+	this->Nome = "";
+	this->Dados = 0;
 }
 
-Informacoes::Informacoes(std::string primeira, std::string segunda)
+Informacoes::Informacoes(std::string primeira, int segunda)
 {
-	this->PrimeiraString = primeira;
-	this->SegundaString = segunda;
+	this->Nome = primeira;
+	this->Dados = segunda;
 }
 
 Informacoes::~Informacoes()
 {
 }
 
-void Informacoes::SetPrimeiraString(std::string primeiraString)
+void Informacoes::SetNome(std::string primeiraString)
 {
-	this->PrimeiraString = primeiraString;
+	this->Nome = primeiraString;
 }
 
-void Informacoes::SetSegundaString(std::string segundaString)
+void Informacoes::SetDados(int dados)
 {
-	this->SegundaString = segundaString;
+	this->Dados = dados;
 }
 
-std::string Informacoes::GetPrimeiraString()
+std::string Informacoes::GetNome()
 {
-	return this->PrimeiraString;
+	return this->Nome;
 }
 
-std::string Informacoes::GetSegundaString()
+int Informacoes::GetDados()
 {
-	return this->SegundaString;
-}
-
-std::string Informacoes::GetString(bool primeira)
-{
-	return primeira ? PrimeiraString : SegundaString;
+	return this->Dados;
 }

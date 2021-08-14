@@ -3,9 +3,8 @@
 #include "OrdenacaoControl.h"
 #include <iostream>
 
-Heapsort::Heapsort(bool primeira)
+Heapsort::Heapsort()
 {
-	this->Primeira = primeira;
 }
 
 Heapsort::~Heapsort()
@@ -46,12 +45,11 @@ void Heapsort::Refaz(int esq, int dir, Informacoes informacoes[])
 
 	while (j <= dir) {
 		if (j < dir) {
-			if (OrdenacaoControl().VemAntes(informacoes[j - 1].GetString(this->Primeira), informacoes[j].GetString(this->Primeira))) {
+			if (informacoes[j - 1].GetDados() < informacoes[j].GetDados()) {
 				j++;
 			}
 		}
-		if (OrdenacaoControl().VemAntes(informacoes[j - 1].GetString(this->Primeira), info.GetString(this->Primeira))
-			|| informacoes[j - 1].GetString(this->Primeira) == info.GetString(this->Primeira)) {
+		if (informacoes[j - 1].GetDados() <= info.GetDados()) {
 			break;
 		}
 		informacoes[i - 1] = informacoes[j - 1];

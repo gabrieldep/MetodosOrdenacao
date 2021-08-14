@@ -2,9 +2,8 @@
 #include "Informacoes.h"
 #include "OrdenacaoControl.h"
 
-Quicksort::Quicksort(bool primeira)
+Quicksort::Quicksort()
 {
-	this->primeira = primeira;
 }
 
 Quicksort::~Quicksort()
@@ -35,11 +34,11 @@ void Quicksort::Particiona(int inicio, int fim, int* i, int* j, Informacoes info
 	pivo = informacoes[(*i + *j) / 2];
 
 	do {
-		while (OrdenacaoControl().VemAntes(informacoes[*i].GetString(this->primeira), pivo.GetString(this->primeira))) {
+		while (OrdenacaoControl().VemAntes(informacoes[*i].GetNome(), pivo.GetNome())) {
 			(*i)++;
 		}
 
-		while (OrdenacaoControl().VemAntes(pivo.GetString(this->primeira), informacoes[*j].GetString(this->primeira))) {
+		while (OrdenacaoControl().VemAntes(pivo.GetNome(), informacoes[*j].GetNome())) {
 			(*j)--;
 		}
 

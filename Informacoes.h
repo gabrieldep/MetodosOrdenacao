@@ -4,17 +4,16 @@ class Informacoes
 {
 	public:
 		Informacoes();
-		Informacoes(std::string primeira, std::string segunda);
+		Informacoes(std::string primeira, int segunda);
 		~Informacoes();
-		void SetPrimeiraString(std::string);
-		void SetSegundaString(std::string);
-		std::string GetPrimeiraString();
-		std::string GetSegundaString();
-		std::string GetString(bool primeira);
+		void SetNome(std::string nome);
+		void SetDados(int dados);
+		std::string GetNome();
+		int GetDados();
 	private:
 		Informacoes* prox;
-		std::string PrimeiraString;
-		std::string SegundaString;
+		std::string Nome;
+		int Dados;
 
 	friend class Fila;
 };
