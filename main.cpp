@@ -19,7 +19,7 @@ void PreencheVetor(Informacoes* informacoes[], char* caminho[]) {
 		for (int i = 0; i < s.size(); i++) {
 			if (s[i] == ' ') {
 				(*informacoes)[aux].SetNome(s.substr(0, i));
-				(*informacoes)[aux].SetDados(stoi(s.substr(i + 1, s.size())));
+				(*informacoes)[aux].SetDados(s.substr(i + 1, s.size()));
 				break;
 			}
 		}
@@ -35,10 +35,10 @@ int main(int argc, char* argv[])
 
 	PreencheVetor(&informacoes, &argv[1]);
 
-	Mergesort().Ordena(0, entrada, informacoes);
+	Heapsort().Ordena(informacoes, entrada);
 
 	for (int i = 0; i < entrada; i++) {
-		cout << informacoes[i].GetNome() << endl;
+		cout << informacoes[i].GetDados() << endl;
 	}
 	return 0;
 }

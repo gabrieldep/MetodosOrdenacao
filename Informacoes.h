@@ -7,13 +7,13 @@ class Informacoes
 		Informacoes(std::string primeira, int segunda);
 		~Informacoes();
 		void SetNome(std::string nome);
-		void SetDados(int dados);
+		void SetDados(std::string dados);
 		std::string GetNome();
-		int GetDados();
+		std::string GetDados();
 	private:
 		Informacoes* prox;
 		std::string Nome;
-		int Dados;
+		std::string Dados;
 
 	friend class Fila;
 };

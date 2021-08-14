@@ -45,7 +45,7 @@ void Heapsort::Refaz(int esq, int dir, Informacoes informacoes[])
 
 	while (j <= dir) {
 		if (j < dir) {
-			if (informacoes[j - 1].GetDados() < informacoes[j].GetDados()) {
+			if (stoi(informacoes[j - 1].GetDados()) < stoi(informacoes[j].GetDados())) {
 				j++;
 			}
 		}
