@@ -145,6 +145,7 @@
     <ClCompile Include="Mergesort.cpp" />
     <ClCompile Include="OrdenacaoControl.cpp" />
     <ClCompile Include="Quicksort.cpp" />
+    <ClCompile Include="Radixsort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Heapsort.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Mergesort.h" />
     <ClInclude Include="OrdenacaoControl.h" />
     <ClInclude Include="Quicksort.h" />
+    <ClInclude Include="Radixsort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

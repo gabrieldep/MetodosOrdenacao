@@ -10,20 +10,20 @@ Quicksort::~Quicksort()
 {
 }
 
-void Quicksort::OrdenaQuicksort(Informacoes Informacoes[], int n)
+void Quicksort::Ordena(Informacoes Informacoes[], int n)
 {
-	Ordena(0, n - 1, Informacoes);
+	OrdenaQuicksort(0, n - 1, Informacoes);
 }
 
-void Quicksort::Ordena(int esq, int dir, Informacoes informacoes[])
+void Quicksort::OrdenaQuicksort(int esq, int dir, Informacoes informacoes[])
 {
 	int i, j;
 	Particiona(esq, dir, &i, &j, informacoes);
 	if (esq < j) {
-		Ordena(esq, j, informacoes);
+		OrdenaQuicksort(esq, j, informacoes);
 	}
 	if (i < dir) {
-		Ordena(i, dir, informacoes);
+		OrdenaQuicksort(i, dir, informacoes);
 	}
 }
 

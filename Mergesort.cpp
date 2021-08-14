@@ -9,15 +9,20 @@ Mergesort::~Mergesort()
 {
 }
 
-void Mergesort::Ordena(int esq, int dir, Informacoes informacoes[])
+void Mergesort::Ordena(Informacoes informacoes[], int n)
 {
-	int meio = 0;
-	if (esq < dir) {
-		meio = (esq + dir) / 2;
-        Ordena(esq, meio, informacoes);
-        Ordena(meio + 1, dir, informacoes);
+    OrdenaMergesort(0, n, informacoes);
+}
+
+void Mergesort::OrdenaMergesort(int esq, int dir, Informacoes informacoes[])
+{
+    int meio = 0;
+    if (esq < dir) {
+        meio = (esq + dir) / 2;
+        OrdenaMergesort(esq, meio, informacoes);
+        OrdenaMergesort(meio + 1, dir, informacoes);
         Merge(esq, meio, dir, informacoes);
-	}
+    }
 }
 
 void Mergesort::Merge(int comeco, int meio, int fim, Informacoes informacoes[])

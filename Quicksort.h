@@ -6,7 +6,7 @@ class Quicksort
 	public:
 		Quicksort();
 		~Quicksort();
-		void OrdenaQuicksort(Informacoes informacoes[], int n);
-		void Ordena(int esq, int dir, Informacoes informacoes[]);
+		void Ordena(Informacoes informacoes[], int n);
+		void OrdenaQuicksort(int esq, int dir, Informacoes informacoes[]);
 		void Particiona(int inicio, int fim, int* i, int* j, Informacoes informacoes[]);
 };
