@@ -1,5 +1,6 @@
 #include "Radixsort.h"
 #include "OrdenacaoControl.h"
+#include <iostream>
 Radixsort::Radixsort()
 {
 }
@@ -10,33 +11,39 @@ Radixsort::~Radixsort()
 
 void Radixsort::Ordena(Informacoes informacoes[], int n)
 {
-	OrdenaRadixsort(0, n - 1, 0, informacoes);
+	int max = PegaMax(informacoes, n);
+	for (int place = 1; max / place > 0; place *= 10)
+		OrdenaRadixsort(informacoes, n, place, max);
 }
 
-void Radixsort::OrdenaRadixsort(int esq, int dir, int indexBit, Informacoes informacoes[])
+int Radixsort::PegaMax(Informacoes dados[], int n) {
+	int max = dados[0].GetDadosInt();
+	for (int i = 1; i < n; i++)
+		if (dados[i].GetDadosInt() > max)
+			max = dados[i].GetDadosInt();
+	return max;
+}
+
+void Radixsort::OrdenaRadixsort(Informacoes dados[], int tam, int place, int max)
 {
-	int const maxBit = 7;
+	Informacoes* resultado = new Informacoes[tam];
+	int* contador = new int[max];
 
-	Informacoes aux;
-	int i = esq, j = dir, w = indexBit;
-	if (indexBit > maxBit) {
-		return;
+	for (int i = 0; i < max; ++i) {
+		contador[i] = 0;
 	}
-
-	do {
-		while (informacoes[i].GetDados()[indexBit] == '0') {
-			i++;
-		}
-		while (informacoes[j].GetDados()[indexBit] == '1') {
-			j++;
-		}
-
-		if (i <= j) {
-			aux = informacoes[i];
-			informacoes[i] = informacoes[j];
-			informacoes[j] = aux;
-			(i)++;
-			(j)--;
-		}
-	} while (i <= j);
+	for (int i = 0; i < tam; i++) {
+		contador[(dados[i].GetDadosInt() / place) % 10]++;
+	}
+	for (int i = 1; i < max; i++) {
+		contador[i] += contador[i - 1];
+	}
+	for (int i = tam - 1; i >= 0; i--) {
+		resultado[contador[(dados[i].GetDadosInt() / place) % 10] - 1] = dados[i];
+		contador[(dados[i].GetDadosInt() / place) % 10]--;
+	}
+	for (int i = 0; i < tam; i++) {
+		dados[i] = resultado[i];
+	}
 }
+

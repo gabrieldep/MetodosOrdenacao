@@ -7,6 +7,7 @@ class Radixsort
 		~Radixsort();
 
 		void Ordena(Informacoes informacoes[], int n);
-		void OrdenaRadixsort(int esq, int dir, int w, Informacoes informacoes[]);
+		void OrdenaRadixsort(Informacoes dados[], int tam, int place, int max);
+		int PegaMax(Informacoes dados[], int n);
 };
 
