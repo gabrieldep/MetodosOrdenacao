@@ -26,6 +26,11 @@ void Informacoes::SetDados(std::string dados)
 	this->Dados = dados;
 }
 
+void Informacoes::SetDadosInt(int dadosInt)
+{
+	DadosInt = dadosInt;
+}
+
 std::string Informacoes::GetNome()
 {
 	return this->Nome;
@@ -35,3 +40,17 @@ std::string Informacoes::GetDados()
 {
 	return this->Dados;
 }
+
+int Informacoes::GetDadosInt()
+{
+	return this->DadosInt;
+}
+
+void Informacoes::operator=(const Informacoes& info)
+{
+	this->Dados = info.Dados;
+	this->DadosInt = info.DadosInt;
+	this->Nome = info.Nome;
+}
+
+
