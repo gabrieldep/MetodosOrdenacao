@@ -12,6 +12,19 @@ Heapsort::~Heapsort()
 {
 }
 
+void Heapsort::Ordena(Informacoes informacoes[], int n)
+{
+	Constroi(informacoes, n);
+
+	Informacoes* auxiliar = new Informacoes[n]();
+	for (int i = n; i > 0; i--) {
+		auxiliar[i - 1] = RetiraMaximo(i, informacoes);
+	}
+	for (int i = 0; i < n; i++) {
+		informacoes[i] = auxiliar[i];
+	}
+}
+
 void Heapsort::Constroi(Informacoes informacoes[], int n)
 {
 	int esq;
@@ -20,10 +33,6 @@ void Heapsort::Constroi(Informacoes informacoes[], int n)
 	while (esq > 1) {
 		esq--;
 		Refaz(esq, n, informacoes);
-		for (int i = 0; i < 7; i++) {
-			std::cout << informacoes[i].GetPrimeiraString() << "\t";
-		}
-		std::cout << std::endl;
 	}
 }
 
@@ -50,4 +59,14 @@ void Heapsort::Refaz(int esq, int dir, Informacoes informacoes[])
 		j = i * 2;
 	}
 	informacoes[i - 1] = info;
+}
+
+Informacoes Heapsort::RetiraMaximo(int n, Informacoes informacoes[])
+{
+	Informacoes max;
+	max = informacoes[0];
+	informacoes[0] = informacoes[n - 1];
+	n--;
+	Refaz(1, n, informacoes);
+	return max;
 }
