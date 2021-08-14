@@ -45,11 +45,11 @@ void Heapsort::Refaz(int esq, int dir, Informacoes informacoes[])
 
 	while (j <= dir) {
 		if (j < dir) {
-			if (stoi(informacoes[j - 1].GetDados()) < stoi(informacoes[j].GetDados())) {
+			if (informacoes[j - 1].GetDadosInt() < informacoes[j].GetDadosInt()) {
 				j++;
 			}
 		}
-		if (informacoes[j - 1].GetDados() <= info.GetDados()) {
+		if (informacoes[j - 1].GetDadosInt() <= info.GetDadosInt()) {
 			break;
 		}
 		informacoes[i - 1] = informacoes[j - 1];

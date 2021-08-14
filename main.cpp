@@ -10,7 +10,7 @@ void PreencheVetor(Informacoes* informacoes[], char* caminho[]) {
 	char* result;
 	char Linha[100];
 	//*caminho = "C:/Users/Gabriel/Documents/homologacao.txt";
-	FILE* arquivo = fopen("C:/Users/Gabriel/Documents/teste1000.txt", "rt");
+	FILE* arquivo = fopen("C:/Users/Gabriel/Documents/homologacao.txt", "rt");
 	int aux = 0;
 	while (!feof(arquivo))
 	{
@@ -21,6 +21,7 @@ void PreencheVetor(Informacoes* informacoes[], char* caminho[]) {
 			if (s[i] == ' ') {
 				(*informacoes)[aux].SetNome(s.substr(0, i));
 				(*informacoes)[aux].SetDados(s.substr(i + 1, s.size()));
+				(*informacoes)[aux].SetDadosInt(stoi(s.substr(i + 1, s.size())));
 				break;
 			}
 		}
@@ -31,7 +32,7 @@ void PreencheVetor(Informacoes* informacoes[], char* caminho[]) {
 
 int main(int argc, char* argv[])
 {
-	int entrada = 5;
+	int entrada = 200000;
 	Informacoes* informacoes = new Informacoes[entrada]();
 
 	PreencheVetor(&informacoes, &argv[1]);
@@ -39,6 +40,7 @@ int main(int argc, char* argv[])
 	Radixsort().Ordena(informacoes, entrada);
 
 	for (int i = 0; i < entrada; i++) {
+		cout << informacoes[i].GetNome() << " ";
 		cout << informacoes[i].GetDados() << endl;
 	}
 	return 0;
