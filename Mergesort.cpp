@@ -9,11 +9,22 @@ Mergesort::~Mergesort()
 {
 }
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name="informacoes">Array a ser ordenado</param>
+/// <param name="n">Tamanho do array</param>
 void Mergesort::Ordena(Informacoes informacoes[], int n)
 {
     OrdenaMergesort(0, n - 1, informacoes);
 }
 
+/// <summary>
+/// Método recursivo para ordenar o vetor
+/// </summary>
+/// <param name="esq">Indice inicial da partição a ser ordenada</param>
+/// <param name="dir">Indice final da partição a ser ordenada</param>
+/// <param name="informacoes">Array com os dados</param>
 void Mergesort::OrdenaMergesort(int esq, int dir, Informacoes informacoes[])
 {
     int meio = 0;
@@ -25,6 +36,13 @@ void Mergesort::OrdenaMergesort(int esq, int dir, Informacoes informacoes[])
     }
 }
 
+/// <summary>
+/// Junta os pequenos arrays ja ordenados.
+/// </summary>
+/// <param name="comeco">Inidice inicial</param>
+/// <param name="meio">Indice do meio</param>
+/// <param name="fim">Indice final</param>
+/// <param name="informacoes">Array com as informacoes</param>
 void Mergesort::Merge(int comeco, int meio, int fim, Informacoes informacoes[])
 {
     int i = comeco, j = meio + 1, k = 0, tam = fim - comeco + 1;

@@ -6,6 +6,12 @@
 #include "Radixsort.h"
 using namespace std;
 
+/// <summary>
+/// Faz a leitura de um arquivo e preenche um array com os dados
+/// </summary>
+/// <param name="informacoes">Vetor passado por referência para ser preenchido</param>
+/// <param name="caminho">Caminho do arquivo</param>
+/// <param name="tamanho">Quantidade de linhas a serem lidas</param>
 void PreencheVetor(Informacoes* informacoes[], const char caminho[], int tamanho) {
 	char* result;
 	char Linha[100];
