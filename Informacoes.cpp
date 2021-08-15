@@ -45,12 +45,3 @@ int Informacoes::GetDadosInt()
 {
 	return this->DadosInt;
 }
-
-void Informacoes::operator=(const Informacoes& info)
-{
-	this->Dados = info.Dados;
-	this->DadosInt = info.DadosInt;
-	this->Nome = info.Nome;
-}
-
-

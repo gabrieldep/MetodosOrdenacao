@@ -12,7 +12,6 @@ class Informacoes
 		std::string GetNome();
 		std::string GetDados();
 		int GetDadosInt();
-		void operator=(const Informacoes& info);
 	private:
 		std::string Nome;
 		std::string Dados;
