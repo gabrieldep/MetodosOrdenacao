@@ -11,7 +11,7 @@ Mergesort::~Mergesort()
 
 void Mergesort::Ordena(Informacoes informacoes[], int n)
 {
-    OrdenaMergesort(0, n, informacoes);
+    OrdenaMergesort(0, n - 1, informacoes);
 }
 
 void Mergesort::OrdenaMergesort(int esq, int dir, Informacoes informacoes[])
