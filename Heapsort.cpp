@@ -19,14 +19,11 @@ Heapsort::~Heapsort()
 void Heapsort::Ordena(Informacoes informacoes[], int n)
 {
 	Constroi(informacoes, n);
-
 	Informacoes* auxiliar = new Informacoes[n]();
-	for (int i = n; i > 0; i--) {
+	for (int i = n; i > 0; i--) 
 		auxiliar[i - 1] = RetiraMaximo(i, informacoes);
-	}
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
 		informacoes[i] = auxiliar[i];
-	}
 }
 
 /// <summary>
@@ -36,9 +33,7 @@ void Heapsort::Ordena(Informacoes informacoes[], int n)
 /// <param name="n">Tamanho do array</param>
 void Heapsort::Constroi(Informacoes informacoes[], int n)
 {
-	int esq;
-	esq = (n / 2) + 1;
-
+	int esq = (n / 2) + 1;
 	while (esq > 1) {
 		esq--;
 		Refaz(esq, n, informacoes);
@@ -53,21 +48,16 @@ void Heapsort::Constroi(Informacoes informacoes[], int n)
 /// <param name="informacoes">Array com os dados do Heap</param>
 void Heapsort::Refaz(int esq, int dir, Informacoes informacoes[])
 {
-	int i, j;
-	Informacoes info;
-	i = esq;
-	j = i * 2;
-	info = informacoes[i - 1];
+	int i = esq, j = esq * 2;
+	Informacoes info = informacoes[i - 1];
 
 	while (j <= dir) {
 		if (j < dir) {
-			if (informacoes[j - 1].GetDadosInt() < informacoes[j].GetDadosInt()) {
+			if (informacoes[j - 1].GetDadosInt() < informacoes[j].GetDadosInt())
 				j++;
-			}
 		}
-		if (informacoes[j - 1].GetDadosInt() <= info.GetDadosInt()) {
+		if (informacoes[j - 1].GetDadosInt() <= info.GetDadosInt())
 			break;
-		}
 		informacoes[i - 1] = informacoes[j - 1];
 		i = j;
 		j = i * 2;
