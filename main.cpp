@@ -59,9 +59,8 @@ int main(int argc, const char* argv[])
 		Mergesort().Ordena(informacoes, entrada);
 	}
 
-	for (int i = 0; i < entrada; i++) {
+	for (int i = 0; i < entrada; i++)
 		cout << informacoes[i].GetNome() << " " << informacoes[i].GetDados();
-	}
 
 	return 0;
 }

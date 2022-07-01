@@ -30,12 +30,10 @@ void Quicksort::OrdenaQuicksort(int esq, int dir, Informacoes informacoes[])
 {
 	int i, j;
 	Particiona(esq, dir, &i, &j, informacoes);
-	if (esq < j) {
+	if (esq < j)
 		OrdenaQuicksort(esq, j, informacoes);
-	}
-	if (i < dir) {
+	if (i < dir)
 		OrdenaQuicksort(i, dir, informacoes);
-	}
 }
 
 /// <summary>
@@ -53,13 +51,11 @@ void Quicksort::Particiona(int inicio, int fim, int* i, int* j, Informacoes info
 	pivo = informacoes[(*i + *j) / 2];
 
 	do {
-		while (OrdenacaoControl().VemAntes(informacoes[*i].GetNome(), pivo.GetNome())) {
+		while (OrdenacaoControl().VemAntes(informacoes[*i].GetNome(), pivo.GetNome()))
 			(*i)++;
-		}
 
-		while (OrdenacaoControl().VemAntes(pivo.GetNome(), informacoes[*j].GetNome())) {
+		while (OrdenacaoControl().VemAntes(pivo.GetNome(), informacoes[*j].GetNome()))
 			(*j)--;
-		}
 
 		if (*i <= *j) {
 			w = informacoes[*i];
