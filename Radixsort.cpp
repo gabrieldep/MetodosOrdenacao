@@ -47,21 +47,17 @@ void Radixsort::OrdenaRadixsort(Informacoes informacoes[], int tam, int place, i
 	Informacoes* resultado = new Informacoes[tam];
 	int* contador = new int[max];
 
-	for (int i = 0; i < max; ++i) {
+	for (int i = 0; i < max; ++i)
 		contador[i] = 0;
-	}
-	for (int i = 0; i < tam; i++) {
+	for (int i = 0; i < tam; i++)
 		contador[(informacoes[i].GetDadosInt() / place) % 10]++;
-	}
-	for (int i = 1; i < max; i++) {
+	for (int i = 1; i < max; i++)
 		contador[i] += contador[i - 1];
-	}
 	for (int i = tam - 1; i >= 0; i--) {
 		resultado[contador[(informacoes[i].GetDadosInt() / place) % 10] - 1] = informacoes[i];
 		contador[(informacoes[i].GetDadosInt() / place) % 10]--;
 	}
-	for (int i = 0; i < tam; i++) {
+	for (int i = 0; i < tam; i++)
 		informacoes[i] = resultado[i];
-	}
 }
 
